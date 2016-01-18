@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses>
+    <course id ="c01">
+        <name>Swift Intro</name>
+        <description>Basic Swift knowledge.</description>
+        
+        <timeslots>
+            <timeslot id = "t01">
+                <startDate>10/10/14, 8:00 AM</startDate>
+                <endDate>10/10/14, 10:00 AM</endDate>
+                <location>Aquarium</location>
+            </timeslot>
+            
+            <timeslot id = "t03">
+                <startDate>10/11/14, 1:00 PM</startDate>
+                <endDate>10/11/14, 3:00 PM</endDate>
+                <location>Terrarium</location>
+            </timeslot>
+            
+        </timeslots>
+    </course>
+    
+    <course id ="c02">
+        <name>Swift Advanced</name>
+        <description>Advanced Swift knowledge.</description>
+        
+        <timeslots>
+            <timeslot id = "t02">
+                <startDate>10/10/14, 8:00 AM</startDate>
+                <endDate>10/10/14, 10:00 AM</endDate>
+                <location>Terrarium</location>
+            </timeslot>
+        </timeslots>
+    </course>
+    
+    <course id ="c03">
+        <name>Data Serialization</name>
+        <description>The greatest course ever in history of the iOS Praktikum. It covers the topic of data serialization. The discussed techniques are: plist, JSON and XML. This amazing course will make you to a Swift guru.</description>
+        
+        <timeslots>
+            <timeslot id = "t06">
+                <startDate>10/17/14, 10:00 AM</startDate>
+                <endDate>10/17/14, 12:00 PM</endDate>
+                <location>Terrarium</location>
+            </timeslot>
+            
+            <timeslot id = "t04">
+                <startDate>10/13/14, 2:00 PM</startDate>
+                <endDate>10/13/14, 4:00 PM</endDate>
+                <location>Terrarium</location>
+            </timeslot>
+            
+            <timeslot id = "t05">
+                <startDate>10/14/14, 8:00 AM</startDate>
+                <endDate>10/14/14, 10:00 AM</endDate>
+                <location>Aquarium</location>
+            </timeslot>
+            
+        </timeslots>
+    </course>
+
+</courses>
+
+
+
+
+
+

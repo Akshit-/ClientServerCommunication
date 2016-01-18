@@ -1,0 +1,139 @@
+
+//
+//  SecondDataManager.swift
+//  RegistrationApp
+//
+//  Created by Felix Sonntag on 31/08/14.
+//  Copyright (c) 2014 LS1 TUM. All rights reserved.
+//
+
+import Foundation
+import AFNetworking
+
+private let _secondDataManagerInstance = SecondDataManager();
+
+class SecondDataManager: DataManager
+{
+    // fetch the data from the server
+
+    private let serializationHelper : JSONSerializationHelper = JSONSerializationHelper()
+
+    var student: Student?
+    var availableCourses:Array<CourseTimeslot>?
+    
+    let baseUrlString = "http://10.180.46.86:8080/iOSIntoService/rest/"
+    var manager : AFHTTPRequestOperationManager
+    
+    class var sharedDataManager: DataManager {
+        return _secondDataManagerInstance;        
+    }
+    
+    init() {
+        let baseUrl = NSURL(string: baseUrlString)
+        manager = AFHTTPRequestOperationManager(baseURL: baseUrl)
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content")
+        
+                
+    }
+    
+    func updateStudent(username: String, success: (student:Student!) -> Void, failure: (error : NSError!) -> Void) {
+        
+    }
+    
+    func updateAllAvailableCourses(success: (courses:[CourseTimeslot]) -> Void, failure: (error : NSError!) -> Void) {
+        //TODO: Implement Network Request and set self.student
+        
+        
+        
+        manager.GET("sessions", parameters: nil, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+            
+            println(responseObject)
+            
+            var courses = [CourseTimeslot]()
+            
+            courses = self.serializationHelper.coursesFromArray(responseObject as [NSDictionary])
+            
+//            NSLog("Showing all courses %@",courses)
+
+            success(courses: courses)
+            
+        }, failure:{ (operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
+            failure(error: error)
+            
+        })
+        
+    }
+    func postNewRegistration(registration: Registration, success:() -> Void, failure: (error : NSError!) -> Void) {
+        //TODO: Implement Network Request
+        
+        var path = "sessions/" + registration.courseTimeslot!.course!.identifier!
+                    + "/timeslots/" + registration.courseTimeslot!.identifier!
+                    + "registrations"
+        
+        
+        var registrationJSON = self.serializationHelper.registrationToJSON(self.student!, registration: registration);
+        
+        
+        ///sessions/:sessionID/timeslots/:timeslotID/registrations
+        manager.POST(path, parameters: registrationJSON, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+        
+                success()
+            
+            }, failure:{ (operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
+                //
+                
+        })
+
+        
+    }
+    func deleteRegistration(registration: Registration, success:() -> Void, failure: (error : NSError!) -> Void) {
+        //TODO: Implement Network Request
+        
+        //DELETE /sessions/:sessionID/timeslots/:timeslotID/registrations/:registrationID
+
+        var path = "sessions/" + registration.courseTimeslot!.course!.identifier!
+            + "/timeslots/" + registration.courseTimeslot!.identifier!
+            + "registrations" + registration.identifier!
+        
+        
+        manager.DELETE(path, parameters: nil, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+            
+            success()
+            
+            }, failure:{ (operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
+                //
+                
+        })
+        
+    }
+    
+    func postNewStudent(studentAttributes: NSDictionary, success:(student:Student!) -> Void, failure: (error : NSError!) -> Void) {
+        
+        manager.POST("students", parameters:studentAttributes, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+<<<<<<< HEAD
+            self.student =  self.serializationHelper.studentFromDictionary(responseObject as NSDictionary)
+            success(student: self.student)
+=======
+            var student =  self.serializationHelper.studentFromDictionary(responseObject as NSDictionary)
+            self.student = student;
+            success(student: student)
+>>>>>>> 6651164fdd543e5aedd786d0e4c2ea19af07bb09
+            
+            }, failure:{ (operation: AFHTTPRequestOperation!, error:NSError!) -> Void in
+                failure(error: error)
+        })
+
+    }
+    
+    func sortTimeslots()
+    {
+        self.availableCourses!.sort { (firstTimeslot, secondTimeslot) -> Bool in
+            var result = firstTimeslot.startTime!.compare(secondTimeslot.startTime!)
+            return result == NSComparisonResult.OrderedAscending
+        }
+        
+    }
+}

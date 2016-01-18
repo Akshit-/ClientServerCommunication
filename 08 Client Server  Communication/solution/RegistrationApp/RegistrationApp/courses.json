@@ -1,0 +1,59 @@
+[
+  {
+    "identifier" : "c01",
+    "name" : "Swift Intro",
+    "description" : "Basic Swift knowledge.",
+    "timeslots" : [
+      {
+        "identifier" : "t01",
+        "startTime" : "2014-10-10T08:00:00Z",
+        "endTime" : "2014-10-10T10:00:00Z",
+        "location" : "Aquarium"
+      },
+      {
+        "identifier" : "t03",
+        "startTime" : "2014-10-11T13:00:00Z",
+        "endTime" : "2014-10-11T15:00:00Z",
+        "location" : "Terrarium"
+      }
+    ]
+  },
+  {
+    "identifier" : "c02",
+    "name" : "Swift Advanced",
+    "description" : "Advanced Swift knowledge.",
+    "timeslots" : [
+      {
+        "identifier" : "t02",
+        "startTime" : "2014-10-10T08:00:00Z",
+        "endTime" : "2014-10-10T10:00:00Z",
+        "location" : "Terrarium"
+      }
+    ]
+  },
+  {
+    "identifier" : "c07",
+    "name" : "Data Serialization",
+    "description" : "The greatest course ever in history of the iOS Praktikum. It covers the topic of data serialization. The discussed techniques are: plist, JSON and XML. This amazing course will make you to a Swift guru.",
+    "timeslots" : [
+      {
+        "identifier" : "t06",
+        "startTime" : "2014-10-17T10:00:00Z",
+        "endTime" : "2014-10-17T12:00:00Z",
+        "location" : "Terrarium"
+      },
+      {
+        "identifier" : "t04",
+        "startTime" : "2014-10-13T14:00:00Z",
+        "endTime" : "2014-10-13T16:00:00Z",
+        "location" : "Terrarium"
+      },
+      {
+        "identifier" : "t05",
+        "startTime" : "2014-10-14T08:00:00Z",
+        "endTime" : "2014-10-14T10:00:00Z",
+        "location" : "Aquarium"
+      }
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfB-Q4-zMs">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="col-wy-8D1">
+            <objects>
+                <viewController id="XfB-Q4-zMs" customClass="LoginViewController" customModule="RegistrationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ukw-d2-FUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="XZJ-co-5Jk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s6w-ae-UDK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqC-LZ-E5t">
+                                <rect key="frame" x="30" y="113" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bI-I0-dDW">
+                                <rect key="frame" x="168" y="227" width="122" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="XfB-Q4-zMs" eventType="touchUpInside" id="5oC-ay-wjO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Praktikum 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMf-3A-G8u">
+                                <rect key="frame" x="83" y="40" width="153" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b7j-Nf-bbS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijq-aO-f8B">
+                                <rect key="frame" x="30" y="227" width="123" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed" destination="XfB-Q4-zMs" eventType="touchUpInside" id="NqQ-PT-Rm4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-Hj-BkA">
+                                <rect key="frame" x="30" y="168" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Z5-Hj-BkA" firstAttribute="top" secondItem="kqC-LZ-E5t" secondAttribute="bottom" constant="25" id="4Fe-6Y-qtb"/>
+                            <constraint firstItem="3bI-I0-dDW" firstAttribute="leading" secondItem="ijq-aO-f8B" secondAttribute="trailing" constant="15" id="9qZ-Xh-hcR"/>
+                            <constraint firstItem="2Z5-Hj-BkA" firstAttribute="trailing" secondItem="3bI-I0-dDW" secondAttribute="trailing" id="ItC-8z-A5T"/>
+                            <constraint firstItem="DMf-3A-G8u" firstAttribute="top" secondItem="s6w-ae-UDK" secondAttribute="top" constant="40" id="PLL-Af-9GG"/>
+                            <constraint firstItem="kqC-LZ-E5t" firstAttribute="top" secondItem="s6w-ae-UDK" secondAttribute="top" constant="113" id="Sow-Pb-i0b"/>
+                            <constraint firstItem="ijq-aO-f8B" firstAttribute="leading" secondItem="2Z5-Hj-BkA" secondAttribute="leading" id="USZ-oT-BIF"/>
+                            <constraint firstAttribute="trailing" secondItem="2Z5-Hj-BkA" secondAttribute="trailing" constant="30" id="Uwb-Ub-LS7"/>
+                            <constraint firstItem="ijq-aO-f8B" firstAttribute="centerY" secondItem="3bI-I0-dDW" secondAttribute="centerY" id="aQa-dK-Zio"/>
+                            <constraint firstItem="ijq-aO-f8B" firstAttribute="width" secondItem="3bI-I0-dDW" secondAttribute="width" id="eN6-Zp-ifc"/>
+                            <constraint firstAttribute="trailing" secondItem="kqC-LZ-E5t" secondAttribute="trailing" constant="30" id="gy3-3X-Zxt"/>
+                            <constraint firstAttribute="centerX" secondItem="DMf-3A-G8u" secondAttribute="centerX" id="iWT-OM-0L8"/>
+                            <constraint firstItem="kqC-LZ-E5t" firstAttribute="leading" secondItem="s6w-ae-UDK" secondAttribute="leading" constant="30" id="k4s-GS-kzN"/>
+                            <constraint firstItem="2Z5-Hj-BkA" firstAttribute="leading" secondItem="s6w-ae-UDK" secondAttribute="leading" constant="30" id="mDg-aY-X5F"/>
+                            <constraint firstItem="ijq-aO-f8B" firstAttribute="top" secondItem="2Z5-Hj-BkA" secondAttribute="bottom" constant="29" id="seC-tz-U3S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="2Z5-Hj-BkA" id="ze1-hn-dui"/>
+                        <outlet property="usernameTextField" destination="kqC-LZ-E5t" id="76W-4K-iMp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJF-ze-x7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="252"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

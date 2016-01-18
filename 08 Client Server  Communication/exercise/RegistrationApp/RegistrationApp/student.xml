@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student id = "s01">
+    <username>Bernd</username>
+    
+    <registrations>
+        <registration id = "r01">
+            <timeslotIdentifier>t01</timeslotIdentifier>
+        </registration>
+        
+        <registration id = "r02">
+            <timeslotIdentifier>t04</timeslotIdentifier>
+        </registration>
+    </registrations>
+</student>
